@@ -1,0 +1,320 @@
+:root {
+    --border-radius   : 4px;
+    --cell-color      : #eee4da;
+    --background-color: #bbada0;
+    --grid-cell-color : rgba(238, 228, 218, 0.35);
+    --text-color      : #776e65;
+}
+
+@keyframes spawned {
+    from {
+        opacity  : 0;
+        transform: scale(.1);
+    }
+
+    to {
+        opacity  : 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+* {
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    color           : var(--text-color);
+    background-color: #faf8ef;
+}
+
+a {
+    color: var(--text-color);
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.container {
+    width    : 100%;
+    max-width: 600px;
+    margin   : 0 auto;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    float: left;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-padding {
+    padding: 0 8px;
+}
+
+.game {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+}
+
+.row:after {
+    content: "";
+    clear  : both;
+    display: table;
+}
+
+.row-padding {
+    padding: 20px 0;
+}
+
+.col-padding:first-child {
+    padding-right: 0;
+}
+
+.col-padding:last-child {
+    padding-right: 0;
+}
+
+.row-game {
+    text-align: center;
+}
+
+#game {
+    position: relative;
+    width   : auto;
+    display : inline-block;
+}
+
+.grid-cell,
+.cell {
+    background-color: rgba(238, 228, 218, 0.35);
+    border-radius   : 4px;
+    width           : 80px;
+    height          : 80px;
+    display         : inline-block;
+    margin          : 8px;
+}
+
+.cell {
+    background-color: #eee4da;
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    transition      : top .3s ease, left .3s ease, opacity .3s ease;
+    text-align      : center;
+    line-height: 80px;
+    color: #776e65;
+    font-size: 36px;
+    font-weight: 700;
+    overflow   : hidden;
+    animation  : spawned .3s ease-in;
+}
+
+.cell-8,
+.cell-16,
+.cell-32,
+.cell-64,
+.cell-128,
+.cell-256,
+.cell-512,
+.cell-1024,
+.cell-2048 {
+    color: #fff;
+}
+
+.cell-8 {
+    background-color: #f2b179;
+}
+
+.cell-16 {
+    background-color: #f59563;
+}
+
+.cell-32 {
+    background-color: #f67c60;
+}
+
+.cell-64 {
+    background-color: #f65e3b;
+}
+
+.cell-128 {
+    background-color: #edcf73;
+}
+
+.cell-256 {
+    background-color: #edcc62;
+}
+
+.cell-512 {
+    background-color: #edc850;
+}
+
+.cell-1024, .cell-2048 {
+    font-size: 30px;
+}
+
+.cell-1024 {
+    background-color: #edc53f;
+}
+
+.cell-2048 {
+    background-color: #edc22d;
+}
+
+.first {
+    border: #776e65 solid 2px;
+}
+
+.hiding {
+    opacity: 0;
+}
+
+.game-container {
+    background-color:
+        #bbada0;
+    display      : inline-block;
+    padding      : 16px;
+    margin       : 8px;
+    border-radius: var(--border-radius);
+}
+
+.button {
+
+    background-color: #bbada0;
+
+    color        : #fff;
+    border       : none;
+    border-radius: var(--border-radius);
+    line-height  : 45px;
+    padding      : 0 20px;
+    font-weight  : 700;
+    font-size    : 18px;
+    cursor       : pointer;
+
+}
+
+.score-view {
+    background-color: var(--background-color);
+    color           : #fff;
+    text-align      : center;
+    border-radius   : var(--border-radius);
+    display         : inline-block;
+    padding         : 12px;
+    width           : 100%;
+    font-size       : 18px;
+}
+
+.score-view .title {
+    font-weight   : 700;
+    text-transform: uppercase;
+    font-size     : 12px;
+    color         : rgba(255, 255, 255, .7);
+}
+
+h1 {
+    font-weight: 600;
+    font-size  : 50px;
+}
+
+#newGame {
+    float: right;
+}
+
+#description {
+    float      : left;
+    line-height: 45px;
+}
+
+.window {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bbada07d;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 28px;
+    animation  : opacity .3s ease-in;
+  }
+  .window p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }

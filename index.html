@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-padding">
+            <div class="col-8">
+                <h1>2048</h1>
+            </div>
+            <div class="col-2 col-padding">
+                <div class="score-view">
+                    <p class="title">Score</p>
+                    <p id="score">0</p>
+                </div>
+            </div>
+            <div class="col-2 col-padding">
+                <div class="score-view">
+                    <p class="title">Best</p>
+                    <p id="best">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p id="description">A small <span class="bold">2048</span> clone project! <a
+                    href="https://github.com/surrealegg/2048-clone" target="_blank" title="Source code">Source code</a></p>
+            <button class="button" id="newGame">New Game</button>
+        </div>
+        <div class="row row-padding row-game">
+            <div class="game-container">
+                <div id="game">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/js/functions.js"></script>
+    <script src="src/js/cell.js"></script>
+    <script src="src/js/grid.js"></script>
+    <script src="src/js/game.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+
+</html>
